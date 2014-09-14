@@ -36,6 +36,7 @@ namespace VisualCaptcha
             if (numberOfOptions < 2) { numberOfOptions = 5; } // Reset to default value if out of range 
 
             _session.Images = GetRandomOptions(Assets.Images, numberOfOptions);
+            var imageValues = HashValues(_session.Images);
             _session.ValidImageOption = GetRandomOption(_session.Images);
 
             _session.Audios = GetRandomOptions(Assets.Audios, numberOfOptions);
@@ -43,7 +44,7 @@ namespace VisualCaptcha
 
             _session.FrontEndData = new FrontEndData
             {
-                values = HashValues(_session.Images),
+                values = imageValues,
                 imageName = _session.ValidImageOption.Key,
                 imageFieldName = _crypto.GetRandomString(20),
                 audioFieldName = _crypto.GetRandomString(20)

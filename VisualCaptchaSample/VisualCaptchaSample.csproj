@@ -104,9 +104,7 @@
     <Content Include="img\sprites-s15961808f9.png" />
     <Content Include="img\sprites\icon_no.png" />
     <Content Include="img\sprites\icon_yes.png" />
-    <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\main.js" />
-    <Content Include="js\visualcaptcha.jquery.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -131,9 +129,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Audio\" />
-    <Folder Include="Views\Image\" />
-    <Folder Include="Views\Start\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VisualCaptcha\VisualCaptcha.csproj">
