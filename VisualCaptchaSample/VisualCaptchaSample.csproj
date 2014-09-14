@@ -104,18 +104,9 @@
     <Content Include="img\sprites-s15961808f9.png" />
     <Content Include="img\sprites\icon_no.png" />
     <Content Include="img\sprites\icon_yes.png" />
-    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\visualcaptcha.jquery.js" />
-    <Content Include="js\require.js" />
-    <Content Include="js\visualcaptcha.js" />
-    <Content Include="js\visualcaptcha\config.js" />
-    <Content Include="js\visualcaptcha\core.js" />
-    <Content Include="js\visualcaptcha\deep-extend.js" />
-    <Content Include="js\visualcaptcha\helpers.js" />
-    <Content Include="js\visualcaptcha\language.js" />
-    <Content Include="js\visualcaptcha\templates.js" />
-    <Content Include="js\visualcaptcha\xhr-request.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
