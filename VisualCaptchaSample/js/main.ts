@@ -4,15 +4,14 @@ interface JQuery {
 }
 
 class Main {
-	$captchaContainer: JQuery = $('#sample-captcha');
-	$form: JQuery = $("#form-sample");
-	$statusContainer: JQuery = $("#status");
-	$statusIcon: JQuery = $("#status-icon");
-	$statusText: JQuery = $("#status-text");
-	$statusMessage: JQuery = $("#status-message");
-	$checkIsFilled: JQuery = $("#check-is-filled");
-
-	captcha: any;
+	private $captchaContainer: JQuery = $('#sample-captcha');
+	private $form: JQuery = $("#form-sample");
+	private $statusContainer: JQuery = $("#status");
+	private $statusIcon: JQuery = $("#status-icon");
+	private $statusText: JQuery = $("#status-text");
+	private $statusMessage: JQuery = $("#status-message");
+	private $checkIsFilled: JQuery = $("#check-is-filled");
+	private captcha: any;
 
 	constructor() {
 		this.initializeCaptcha();

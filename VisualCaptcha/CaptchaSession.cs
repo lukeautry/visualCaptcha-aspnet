@@ -2,7 +2,10 @@
 
 namespace VisualCaptcha
 {
-    public class CaptchaSession
+    /// <summary>
+    /// Session state container
+    /// </summary>
+    public sealed class CaptchaSession
     {
         public Dictionary<string, string> Images { get; set; }
         public Dictionary<string, string> Audios { get; set; }

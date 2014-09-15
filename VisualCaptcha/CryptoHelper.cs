@@ -4,6 +4,9 @@ using System.Text;
 
 namespace VisualCaptcha
 {
+    /// <summary>
+    /// Helper class to get random-ish values
+    /// </summary>
     public sealed class CryptoHelper
     {
         private static readonly char[] Characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();

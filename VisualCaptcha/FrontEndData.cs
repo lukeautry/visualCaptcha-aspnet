@@ -2,7 +2,10 @@ using System.Collections.Generic;
 
 namespace VisualCaptcha
 {
-    public class FrontEndData
+    /// <summary>
+    /// Serializable class for use by front-end library
+    /// </summary>
+    public sealed class FrontEndData
     {
         public List<string> Values { get; set; }
         public string ImageName { get; set; }

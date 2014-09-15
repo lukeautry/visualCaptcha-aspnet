@@ -2,6 +2,10 @@
 
 namespace VisualCaptcha.assets
 {
+    /// <summary>
+    /// Static class containing image/audio option key/values
+    /// TODO: This probably needs to be hot-swappable, not hardcoded
+    /// </summary>
     public static class Assets
     {
         public static readonly Dictionary<string, string> Images = new Dictionary<string, string>

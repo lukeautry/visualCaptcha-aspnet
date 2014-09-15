@@ -6,13 +6,16 @@ using VisualCaptcha.assets;
 
 namespace VisualCaptcha
 {
+    /// <summary>
+    /// VisualCaptcha object
+    /// </summary>
     public sealed class Captcha
     {
         #region Fields
 
         private readonly CryptoHelper _crypto = new CryptoHelper();
         private readonly CaptchaSession _session;
-        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath ?? "", "assets");
+        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath ?? "", "assets"); // TODO: Support path injection (or some other mechanism) for custom assets
 
         #endregion
 
@@ -36,7 +39,7 @@ namespace VisualCaptcha
             if (numberOfOptions < 2) { numberOfOptions = 5; } // Reset to default value if out of range 
 
             _session.Images = GetRandomOptions(Assets.Images, numberOfOptions);
-            var imageValues = HashValues(_session.Images);
+            var imageValues = HashImagePaths(_session.Images);
             _session.ValidImageOption = GetRandomOption(_session.Images);
 
             _session.Audios = GetRandomOptions(Assets.Audios, numberOfOptions);
@@ -109,7 +112,7 @@ namespace VisualCaptcha
         private Dictionary<string, string> GetRandomOptions(IDictionary<string, string> options, int numberOfOptions)
         {
             var randomOptions = new Dictionary<string, string>();
-            var availableOptions = new Dictionary<string, string>(options);
+            var availableOptions = new Dictionary<string, string>(options); // No deep copy needed here since we're using value types
 
             for (var i = 0; i < numberOfOptions; i++)
             {
@@ -127,7 +130,12 @@ namespace VisualCaptcha
             return options.ToList()[_crypto.GetRandomIndex(options.Count)];
         }
 
-        private List<string> HashValues(IDictionary<string, string> images)
+        /// <summary>
+        /// Get a list of hashed image paths
+        /// </summary>
+        /// <param name="images">Dictionary of image name/path pairs</param>
+        /// <returns>List of hashed strings (used in FrontEndData)</returns>
+        private List<string> HashImagePaths(IDictionary<string, string> images)
         {
             var imageValues = new List<string>();
 
@@ -151,7 +159,7 @@ namespace VisualCaptcha
 
         private bool ValidateAudio(string value)
         {
-            return _session.ValidAudioOption.Value == value;
+            return _session.ValidAudioOption.Value.Equals(value, StringComparison.OrdinalIgnoreCase);
         }
 
         #endregion
