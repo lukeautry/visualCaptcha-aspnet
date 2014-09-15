@@ -79,6 +79,16 @@ namespace VisualCaptcha
             return File.OpenRead(audioPath);
         }
 
+        public bool ValidateImage(string hashedPath)
+        {
+            return _session.ValidImageOption.Value == hashedPath;
+        }
+
+        public bool ValidateAudio(string value)
+        {
+            return _session.ValidAudioOption.Value == value;
+        }
+
         #endregion
 
         #region Private Methods
@@ -122,10 +132,5 @@ namespace VisualCaptcha
         }
 
         #endregion
-
-        public bool ValidateImage(string hashedPath)
-        {
-            return _session.ValidImageOption.Value == hashedPath;
-        }
     }
 }

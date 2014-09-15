@@ -1,3 +1,5 @@
+var captcha;
+
 $(document).ready(function () {
 
 	var element = $('#sample-captcha').visualCaptcha({
@@ -7,8 +9,40 @@ $(document).ready(function () {
 		}
 	});
 
-	var captcha = element.data('captcha');
-	var statusElement = $("#status-message");
+	captcha = element.data('captcha');
+
+	$("#frm-sample").submit(function() {
+
+		var captchaData = captcha.getCaptchaData();
+		var postData = {
+			"key": captchaData.name,
+			"value": captchaData.value
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "Home/Try",
+			data: postData
+		}).done(function(result) {
+			setStatus(result);
+		}).always(function() {
+			captcha.refresh();
+		});
+
+	});
+
+	function setStatus(result) {
+		var statusContainer = $("#status");
+		if (result.success) {
+			statusContainer.addClass("valid");
+		} else {
+			statusContainer.removeClass("valid");
+		}
+
+		$("#status-icon").removeClass().addClass(result.success ? "icon-yes" : "icon-no");
+		$("#status-text").text(result.message);
+		$("#status-message").show();
+	}
 
 	// Show success/error messages
 	//if (queryString.indexOf('status=noCaptcha') !== -1) {
@@ -26,7 +60,7 @@ $(document).ready(function () {
 	//}
 
 	// Show an alert saying if visualCaptcha is filled or not
-	var showVisualCaptchaFilled = function () {
+	function showVisualCaptchaFilled() {
 		if (captcha.getCaptchaData().valid) {
 			window.alert('visualCaptcha is filled!');
 		} else {

@@ -39,9 +39,14 @@
         <div class="pre-captcha-wrapper">
             <div class="captcha-wrapper">
                 <h1>Fill in the form and submit it</h1>
-                <form name="frm-sample" class="frm-sample" action="try" method="post">
+                <form id="frm-sample" name="frm-sample" class="frm-sample" onsubmit="return false;">
                     <input type="text" class="form-control" placeholder="Name">
-                    <div id="status-message"></div>
+                    <div id="status-message" class="hidden">
+                        <div id="status" class="status">
+                            <div id="status-icon"></div>
+                            <p id="status-text"></p>
+                        </div>
+                    </div>
                     <div id="sample-captcha"></div>
                     <a id="check-is-filled" class='info-btn'>Check if visualCaptcha is filled</a>
                     <button type="submit" name="submit-bt" class="submit">Submit form</button>
