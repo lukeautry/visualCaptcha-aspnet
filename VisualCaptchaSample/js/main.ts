@@ -1,4 +1,4 @@
-﻿/// <reference path="../scripts/typings/jquery/jquery.d.ts" />
+﻿/// <reference path="typings/jquery/jquery.d.ts" />
 interface JQuery {
 	visualCaptcha: any;
 }
@@ -48,7 +48,9 @@ class Main {
 		});
 
 		// Bind click event to "Check if visualCaptcha is filled" button
-		this.$checkIsFilled.click(this.showVisualCaptchaFilled);
+		this.$checkIsFilled.click(()=> {
+			this.showVisualCaptchaFilled();
+		});
 	}
 
 	private attemptTry(): void {

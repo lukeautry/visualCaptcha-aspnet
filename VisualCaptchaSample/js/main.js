@@ -1,4 +1,4 @@
-﻿/// <reference path="../scripts/typings/jquery/jquery.d.ts" />
+﻿/// <reference path="typings/jquery/jquery.d.ts" />
 
 var Main = (function () {
     function Main() {
@@ -41,7 +41,9 @@ var Main = (function () {
         });
 
         // Bind click event to "Check if visualCaptcha is filled" button
-        this.$checkIsFilled.click(this.showVisualCaptchaFilled);
+        this.$checkIsFilled.click(function () {
+            _this.showVisualCaptchaFilled();
+        });
     };
 
     Main.prototype.attemptTry = function () {
