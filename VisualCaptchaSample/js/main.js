@@ -1,75 +1,81 @@
-var captcha;
+﻿/// <reference path="../scripts/typings/jquery/jquery.d.ts" />
 
-$(document).ready(function () {
+var Main = (function () {
+    function Main() {
+        this.$captchaContainer = $('#sample-captcha');
+        this.$form = $("#form-sample");
+        this.$statusContainer = $("#status");
+        this.$statusIcon = $("#status-icon");
+        this.$statusText = $("#status-text");
+        this.$statusMessage = $("#status-message");
+        this.$checkIsFilled = $("#check-is-filled");
+        this.initializeCaptcha();
+        this.bindHandlers();
+    }
+    Main.prototype.initializeCaptcha = function () {
+        this.captcha = this.$captchaContainer.visualCaptcha({
+            imgPath: '../img/',
+            captcha: {
+                numberOfImages: 5,
+                routes: {
+                    start: "/Home/Start",
+                    audio: "/Home/Audio",
+                    image: "/Home/Image"
+                }
+            }
+        }).data("captcha");
+    };
 
-	var element = $('#sample-captcha').visualCaptcha({
-		imgPath: '../img/',
-		captcha: {
-			numberOfImages: 6
-		}
-	});
+    Main.prototype.bindHandlers = function () {
+        var _this = this;
+        // Bind form submission behavior
+        this.$form.submit(function () {
+            _this.attemptTry();
+        });
 
-	captcha = element.data('captcha');
+        // Bind click event to "Check if visualCaptcha is filled" button
+        this.$checkIsFilled.click(this.showVisualCaptchaFilled);
+    };
 
-	$("#frm-sample").submit(function() {
+    Main.prototype.attemptTry = function () {
+        var _this = this;
+        $.ajax({
+            type: "POST",
+            url: "Home/Try",
+            data: {
+                "value": this.captcha.getCaptchaData().value
+            }
+        }).done(function (result) {
+            _this.setStatus(result);
+        }).fail(function () {
+            _this.setStatus({
+                success: false,
+                message: "There was a problem attempting to verify the captcha; please try again."
+            });
+        }).always(this.captcha.refresh()); // Regardless of whether the request itself is a success, we need to load up a new captcha set
+    };
 
-		var captchaData = captcha.getCaptchaData();
-		var postData = {
-			"key": captchaData.name,
-			"value": captchaData.value
-		};
+    Main.prototype.setStatus = function (result) {
+        if (result.success) {
+            this.$statusContainer.addClass("valid");
+        } else {
+            this.$statusContainer.removeClass("valid");
+        }
 
-		$.ajax({
-			type: "POST",
-			url: "Home/Try",
-			data: postData
-		}).done(function(result) {
-			setStatus(result);
-		}).always(function() {
-			captcha.refresh();
-		});
+        this.$statusIcon.removeClass().addClass(result.success ? "icon-yes" : "icon-no");
+        this.$statusText.text(result.message);
+        this.$statusMessage.show();
+    };
 
-	});
+    Main.prototype.showVisualCaptchaFilled = function () {
+        if (this.captcha.getCaptchaData().valid) {
+            window.alert('visualCaptcha is filled!');
+        } else {
+            window.alert('visualCaptcha is NOT filled!');
+        }
+    };
+    return Main;
+})();
 
-	function setStatus(result) {
-		var statusContainer = $("#status");
-		if (result.success) {
-			statusContainer.addClass("valid");
-		} else {
-			statusContainer.removeClass("valid");
-		}
-
-		$("#status-icon").removeClass().addClass(result.success ? "icon-yes" : "icon-no");
-		$("#status-text").text(result.message);
-		$("#status-message").show();
-	}
-
-	// Show success/error messages
-	//if (queryString.indexOf('status=noCaptcha') !== -1) {
-	//	statusElement.innerHTML = '<div class="status"> <div class="icon-no"></div> <p>visualCaptcha was not started!</p> </div>' + statusElement.innerHTML;
-	//} else if (queryString.indexOf('status=validImage') !== -1) {
-	//	statusElement.innerHTML = '<div class="status valid"> <div class="icon-yes"></div> <p>Image was valid!</p> </div>' + statusElement.innerHTML;
-	//} else if (queryString.indexOf('status=failedImage') !== -1) {
-	//	statusElement.innerHTML = '<div class="status"> <div class="icon-no"></div> <p>Image was NOT valid!</p> </div>' + statusElement.innerHTML;
-	//} else if (queryString.indexOf('status=validAudio') !== -1) {
-	//	statusElement.innerHTML = '<div class="status valid"> <div class="icon-yes"></div> <p>Accessibility answer was valid!</p> </div>' + statusElement.innerHTML;
-	//} else if (queryString.indexOf('status=failedAudio') !== -1) {
-	//	statusElement.innerHTML = '<div class="status"> <div class="icon-no"></div> <p>Accessibility answer was NOT valid!</p> </div>' + statusElement.innerHTML;
-	//} else if (queryString.indexOf('status=failedPost') !== -1) {
-	//	statusElement.innerHTML = '<div class="status"> <div class="icon-no"></div> <p>No visualCaptcha answer was given!</p> </div>' + statusElement.innerHTML;
-	//}
-
-	// Show an alert saying if visualCaptcha is filled or not
-	function showVisualCaptchaFilled() {
-		if (captcha.getCaptchaData().valid) {
-			window.alert('visualCaptcha is filled!');
-		} else {
-			window.alert('visualCaptcha is NOT filled!');
-		}
-	};
-
-	// Bind click event to "Check if visualCaptcha is filled" button
-	var filledElement = $("#check-is-filled");
-	filledElement.click(showVisualCaptchaFilled);
-
-});
+new Main();
+//# sourceMappingURL=main.js.map

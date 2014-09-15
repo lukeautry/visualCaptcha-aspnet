@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using VisualCaptcha;
 
 namespace VisualCaptchaSample.Controllers
@@ -18,7 +16,14 @@ namespace VisualCaptchaSample.Controllers
         {
             var session = new Captcha().Generate(numberOfImages);
             Session[SessionKey] = session;
-            return Json(session.FrontEndData, JsonRequestBehavior.AllowGet);
+
+            // Client side library requires lowercase property names
+            return Json(new {
+                values = session.FrontEndData.Values,
+                imageName = session.FrontEndData.ImageName,
+                imageFieldName = session.FrontEndData.ImageFieldName,
+                audioFieldName = session.FrontEndData.AudioFieldName
+            }, JsonRequestBehavior.AllowGet);
         }
 
         public FileResult Image(int imageIndex)
@@ -38,36 +43,15 @@ namespace VisualCaptchaSample.Controllers
             return File(stream, contentType);
         }
 
-        public JsonResult Try(string key, string value)
+        public JsonResult Try(string value)
         {
-            var result = ValidateAttempt(value);
+            var session = (CaptchaSession)Session[SessionKey];
+            var result = new Captcha(session).ValidateAttempt(value);
 
             // Clear out session data on attempt - user gets one try only
             Session[SessionKey] = null;
 
             return Json(new { success = result.Item1, message = result.Item2 });
-        }
-
-        private Tuple<bool, string> ValidateAttempt(string value)
-        {
-            var session = (CaptchaSession) Session[SessionKey];
-            var captcha = new Captcha(session);
-
-            bool success;
-            string message;
-
-            if (session.Images.Any(i => i.Value == value))
-            {
-                success = captcha.ValidateImage(value);
-                message = success ? "Image was valid." : "Image was invalid.";
-            }
-            else // Provided value doesn't exist in Images collection, check against Audios
-            {
-                success = captcha.ValidateAudio(value);
-                message = success ? "Accessibility answer was valid." : "Invalid answer, please try again.";
-            }
-
-            return new Tuple<bool, string>(success, message);
         }
     }
 }

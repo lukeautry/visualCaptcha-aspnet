@@ -4,9 +4,9 @@ namespace VisualCaptcha
 {
     public class FrontEndData
     {
-        public List<string> values { get; set; }
-        public string imageName { get; set; }
-        public string imageFieldName { get; set; }
-        public string audioFieldName { get; set; }
+        public List<string> Values { get; set; }
+        public string ImageName { get; set; }
+        public string ImageFieldName { get; set; }
+        public string AudioFieldName { get; set; }
     }
 }

@@ -44,10 +44,10 @@ namespace VisualCaptcha
 
             _session.FrontEndData = new FrontEndData
             {
-                values = imageValues,
-                imageName = _session.ValidImageOption.Key,
-                imageFieldName = _crypto.GetRandomString(20),
-                audioFieldName = _crypto.GetRandomString(20)
+                Values = imageValues,
+                ImageName = _session.ValidImageOption.Key,
+                ImageFieldName = _crypto.GetRandomString(20),
+                AudioFieldName = _crypto.GetRandomString(20)
             };
 
             return _session;
@@ -79,14 +79,27 @@ namespace VisualCaptcha
             return File.OpenRead(audioPath);
         }
 
-        public bool ValidateImage(string hashedPath)
+        /// <summary>
+        /// Returns success (boolean) and message response (string)
+        /// </summary>
+        /// <param name="answerValue">This could be the hashed value of the image path or the answer to an audio question</param>
+        public Tuple<bool, string> ValidateAttempt(string answerValue)
         {
-            return _session.ValidImageOption.Value == hashedPath;
-        }
+            bool success;
+            string message;
 
-        public bool ValidateAudio(string value)
-        {
-            return _session.ValidAudioOption.Value == value;
+            if (_session.Images.Any(i => i.Value == answerValue))
+            {
+                success = ValidateImage(answerValue);
+                message = success ? "Image selected was valid." : "Image selection was invalid.";
+            }
+            else // Provided value doesn't exist in Images collection, check against Audios
+            {
+                success = ValidateAudio(answerValue);
+                message = success ? "Accessibility answer was valid." : "Invalid answer, please try again.";
+            }
+
+            return new Tuple<bool, string>(success, message);
         }
 
         #endregion
@@ -129,6 +142,16 @@ namespace VisualCaptcha
             }
 
             return imageValues;
+        }
+
+        private bool ValidateImage(string hashedPath)
+        {
+            return _session.ValidImageOption.Value == hashedPath;
+        }
+
+        private bool ValidateAudio(string value)
+        {
+            return _session.ValidAudioOption.Value == value;
         }
 
         #endregion
