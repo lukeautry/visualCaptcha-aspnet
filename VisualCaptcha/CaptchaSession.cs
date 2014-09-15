@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace VisualCaptcha
 {
     /// <summary>
     /// Session state container
     /// </summary>
+    [Serializable]
     public sealed class CaptchaSession
     {
         public Dictionary<string, string> Images { get; set; }

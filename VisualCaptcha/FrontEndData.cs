@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace VisualCaptcha
@@ -5,6 +6,7 @@ namespace VisualCaptcha
     /// <summary>
     /// Serializable class for use by front-end library
     /// </summary>
+    [Serializable]
     public sealed class FrontEndData
     {
         public List<string> Values { get; set; }
