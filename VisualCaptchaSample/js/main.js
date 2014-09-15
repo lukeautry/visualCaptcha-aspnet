@@ -30,7 +30,14 @@ var Main = (function () {
         var _this = this;
         // Bind form submission behavior
         this.$form.submit(function () {
-            _this.attemptTry();
+            if (_this.captcha.getCaptchaData().valid) {
+                _this.attemptTry();
+            } else {
+                _this.setStatus({
+                    success: false,
+                    message: "Please select an option."
+                });
+            }
         });
 
         // Bind click event to "Check if visualCaptcha is filled" button
@@ -52,7 +59,10 @@ var Main = (function () {
                 success: false,
                 message: "There was a problem attempting to verify the captcha; please try again."
             });
-        }).always(this.captcha.refresh()); // Regardless of whether the request itself is a success, we need to load up a new captcha set
+        }).always(function () {
+            // Regardless of whether the request itself is a success, we need to load up a new captcha set
+            _this.captcha.refresh();
+        });
     };
 
     Main.prototype.setStatus = function (result) {

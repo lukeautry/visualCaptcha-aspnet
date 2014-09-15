@@ -106,7 +106,6 @@
     <Content Include="img\sprites-s15961808f9.png" />
     <Content Include="img\sprites\icon_no.png" />
     <Content Include="img\sprites\icon_yes.png" />
-    <Content Include="js\main-old.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -48,9 +48,6 @@ namespace VisualCaptchaSample.Controllers
             var session = (CaptchaSession)Session[SessionKey];
             var result = new Captcha(session).ValidateAttempt(value);
 
-            // Clear out session data on attempt - user gets one try only
-            Session[SessionKey] = null;
-
             return Json(new { success = result.Item1, message = result.Item2 });
         }
     }

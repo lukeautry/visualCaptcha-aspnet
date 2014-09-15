@@ -37,7 +37,14 @@ class Main {
 
 		// Bind form submission behavior
 		this.$form.submit(() => {
-			this.attemptTry();
+			if (this.captcha.getCaptchaData().valid) {
+				this.attemptTry();
+			} else {
+				this.setStatus({
+					success: false,
+					message: "Please select an option."
+				});
+			}
 		});
 
 		// Bind click event to "Check if visualCaptcha is filled" button
@@ -51,14 +58,17 @@ class Main {
 			data: {
 				"value": this.captcha.getCaptchaData().value
 			}
-		}).done(result=> {
+		}).done(result => {
 				this.setStatus(result);
 			}).fail(() => {
 				this.setStatus({
 					success: false,
 					message: "There was a problem attempting to verify the captcha; please try again."
 				});
-			}).always(this.captcha.refresh()); // Regardless of whether the request itself is a success, we need to load up a new captcha set
+			}).always(() => {
+			// Regardless of whether the request itself is a success, we need to load up a new captcha set
+			this.captcha.refresh();
+		}); 
 	}
 
 	private setStatus(result: any): void {

@@ -387,7 +387,6 @@
     <Content Include="assets\images\world.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\audios\12times2.mp3">

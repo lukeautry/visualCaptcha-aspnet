@@ -12,7 +12,7 @@ namespace VisualCaptcha
 
         private readonly CryptoHelper _crypto = new CryptoHelper();
         private readonly CaptchaSession _session;
-        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath, "assets");
+        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath ?? "", "assets");
 
         #endregion
 
