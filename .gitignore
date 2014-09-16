@@ -1,0 +1,9 @@
+/*.suo
+bin/
+obj/
+*.orig
+*.user
+packages
+
+*.nupkg
+TestResults/
