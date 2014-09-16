@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>Jenkins</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Visual Captcha Sample</description>
+  </metadata>
+   <files>
+    <file src="bin\assets\**\*.*" target="lib\net451\assets" />
+   </files>
+</package>
