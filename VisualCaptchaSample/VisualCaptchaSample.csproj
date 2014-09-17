@@ -87,6 +87,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\visualcaptcha.css" />
     <Content Include="img\apple-touch-icon-114x114.png" />
     <Content Include="img\apple-touch-icon-120x120.png" />
     <Content Include="img\apple-touch-icon-144x144.png" />

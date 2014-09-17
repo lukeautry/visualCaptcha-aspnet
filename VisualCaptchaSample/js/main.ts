@@ -24,9 +24,9 @@ class Main {
 			captcha: {
 				numberOfImages: 5,
 				routes: {
-					start: "/Home/Start",
-					audio: "/Home/Audio",
-					image: "/Home/Image"
+					start: "/Start",
+					audio: "/Audio",
+					image: "/Image"
 				}
 			}
 		}).data("captcha");
@@ -93,4 +93,4 @@ class Main {
 	}
 }
 
-new Main();
+var vm = new Main();

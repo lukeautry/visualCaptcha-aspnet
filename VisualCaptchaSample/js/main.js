@@ -18,9 +18,9 @@ var Main = (function () {
             captcha: {
                 numberOfImages: 5,
                 routes: {
-                    start: "/Home/Start",
-                    audio: "/Home/Audio",
-                    image: "/Home/Image"
+                    start: "/Start",
+                    audio: "/Audio",
+                    image: "/Image"
                 }
             }
         }).data("captcha");
@@ -89,5 +89,5 @@ var Main = (function () {
     return Main;
 })();
 
-new Main();
+var vm = new Main();
 //# sourceMappingURL=main.js.map

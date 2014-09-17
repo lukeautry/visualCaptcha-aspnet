@@ -11,7 +11,7 @@ namespace VisualCaptchaTests
         {
             for (var i = 0; i < 100; i++)
             {
-                var captcha = new Captcha();
+                var captcha = new Captcha(new CaptchaSession());
                 var session = captcha.Generate();
 
                 var newCaptcha = new Captcha(session);

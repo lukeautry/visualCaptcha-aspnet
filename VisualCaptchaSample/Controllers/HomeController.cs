@@ -14,7 +14,7 @@ namespace VisualCaptchaSample.Controllers
 
         public JsonResult Start(int numberOfImages)
         {
-            var session = new Captcha().Generate(numberOfImages);
+            var session = new Captcha(new CaptchaSession()).Generate(numberOfImages);
             Session[SessionKey] = session;
 
             // Client side library requires lowercase property names
