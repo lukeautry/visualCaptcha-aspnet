@@ -22,6 +22,7 @@ class Main {
 		this.captcha = this.$captchaContainer.visualCaptcha({
 			imgPath: '../img/',
 			captcha: {
+				url: "/Home",
 				numberOfImages: 5,
 				routes: {
 					start: "/Start",

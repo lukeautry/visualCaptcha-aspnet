@@ -26,21 +26,21 @@ namespace VisualCaptchaSample.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-        public FileResult Image(int imageIndex)
+        public FileResult Image(int imageIndex, int retina = 0)
         {
             var session = (CaptchaSession)Session[SessionKey];
-            var stream = new Captcha(session).GetImage(imageIndex, false);
+            var content = new Captcha(session).GetImage(imageIndex, retina == 1);
 
-            return File(stream, "image/png");
+            return File(content, "image/png");
         }
 
         public FileResult Audio(string type = "mp3")
         {
             var session = (CaptchaSession)Session[SessionKey];
-            var stream = new Captcha(session).GetAudio(type);
+            var content = new Captcha(session).GetAudio(type);
 
             var contentType = type == "mp3" ? "audio/mpeg" : "audio/ogg";
-            return File(stream, contentType);
+            return File(content, contentType);
         }
 
         public JsonResult Try(string value)

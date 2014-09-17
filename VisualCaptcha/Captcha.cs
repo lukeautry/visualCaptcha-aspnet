@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace VisualCaptcha
 {
@@ -14,7 +14,6 @@ namespace VisualCaptcha
 
         private readonly CryptoHelper _crypto = new CryptoHelper();
         private readonly CaptchaSession _session;
-        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory ?? "", "assets");
 
         #endregion
 
@@ -61,25 +60,39 @@ namespace VisualCaptcha
         /// </summary>
         /// <param name="index">Image index</param>
         /// <param name="isRetina">Uses Retina display</param>
-        public FileStream GetImage(int index, bool isRetina)
+        public byte[] GetImage(int index, bool isRetina)
         {
             var key = _session.Images.ToList()[index].Key;
-            var imagePath = Path.Combine(_baseDirectory, "images", Assets.Images[key]);
+            var imageName = Assets.Images[key];
 
-            return File.OpenRead(imagePath);
+            if (isRetina) { imageName = imageName.Replace(".png", "2x.png"); }
+
+            return ReadResource("images", imageName);
         }
 
         /// <summary>
         /// Get file content for audio Captcha option
         /// </summary>
         /// <param name="type">Either mp3 or ogg</param>
-        public FileStream GetAudio(string type)
+        public byte[] GetAudio(string type)
         {
             var audioName = _session.ValidAudioOption.Key;
             if (type == "ogg") { audioName = audioName.Replace(".mp3", ".ogg"); }
 
-            var audioPath = Path.Combine(_baseDirectory, "audios", audioName);
-            return File.OpenRead(audioPath);
+            return ReadResource("audios", audioName);
+        }
+
+        private static byte[] ReadResource(string resourceFolder, string resourceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var streamPath = string.Format("VisualCaptcha.Assets.{0}.{1}", resourceFolder, resourceName);
+            using (var stream = assembly.GetManifestResourceStream(streamPath))
+            {
+                if (stream == null) { return null;  }
+                var bytes = new byte[stream.Length];
+                stream.Read(bytes, 0, bytes.Length);
+                return bytes;
+            }
         }
 
         /// <summary>

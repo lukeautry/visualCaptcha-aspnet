@@ -49,350 +49,122 @@
     <Compile Include="Captcha.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\audios\12times2.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\2times10.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\4plus1.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\4plus3.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\5plus1.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\5times2.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\6plus6.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\99plus1.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\add3to1.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\addblueandyellow.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\after2.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\capitaloffrance.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\divide4by2.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\firstletteralphabet.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\milkcolor.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\skycolor.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\skynight.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\sunastar.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\thirdmonth.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\audios\yourobot.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\airplane2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\airplane.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\balloons2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\balloons.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\camera2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\camera.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\car2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\car.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\cat2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\cat.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\chair2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\chair.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\clip2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\clip.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\clock2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\clock.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\cloud2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\cloud.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\computer2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\computer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\envelope2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\envelope.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\eye2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\eye.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\flag2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\flag.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\folder2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\folder.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\foot2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\foot.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\graph2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\graph.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\house2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\house.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\key2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\key.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\leaf2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\leaf.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\light-bulb2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\light-bulb.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\lock2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\lock.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\magnifying-glass2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\magnifying-glass.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\man2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\man.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\music-note2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\music-note.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\pants2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\pants.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\pencil2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\pencil.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\printer2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\printer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\robot2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\robot.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\scissors2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\scissors.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\sunglasses2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\sunglasses.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\t-shirt2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\t-shirt.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\tag2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\tag.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\tree2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\tree.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\truck2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\truck.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\umbrella2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\umbrella.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\woman2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\woman.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\world2x.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\images\world.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Assets\audios\12times2.mp3" />
+    <EmbeddedResource Include="Assets\audios\2times10.mp3" />
+    <EmbeddedResource Include="Assets\audios\4plus1.mp3" />
+    <EmbeddedResource Include="Assets\audios\4plus3.mp3" />
+    <EmbeddedResource Include="Assets\audios\5plus1.mp3" />
+    <EmbeddedResource Include="Assets\audios\5times2.mp3" />
+    <EmbeddedResource Include="Assets\audios\6plus6.mp3" />
+    <EmbeddedResource Include="Assets\audios\99plus1.mp3" />
+    <EmbeddedResource Include="Assets\audios\add3to1.mp3" />
+    <EmbeddedResource Include="Assets\audios\addblueandyellow.mp3" />
+    <EmbeddedResource Include="Assets\audios\after2.mp3" />
+    <EmbeddedResource Include="Assets\audios\capitaloffrance.mp3" />
+    <EmbeddedResource Include="Assets\audios\divide4by2.mp3" />
+    <EmbeddedResource Include="Assets\audios\firstletteralphabet.mp3" />
+    <EmbeddedResource Include="Assets\audios\milkcolor.mp3" />
+    <EmbeddedResource Include="Assets\audios\skycolor.mp3" />
+    <EmbeddedResource Include="Assets\audios\skynight.mp3" />
+    <EmbeddedResource Include="Assets\audios\sunastar.mp3" />
+    <EmbeddedResource Include="Assets\audios\thirdmonth.mp3" />
+    <EmbeddedResource Include="Assets\audios\yourobot.mp3" />
+    <EmbeddedResource Include="Assets\images\airplane2x.png" />
+    <EmbeddedResource Include="Assets\images\airplane.png" />
+    <EmbeddedResource Include="Assets\images\balloons2x.png" />
+    <EmbeddedResource Include="Assets\images\balloons.png" />
+    <EmbeddedResource Include="Assets\images\camera2x.png" />
+    <EmbeddedResource Include="Assets\images\camera.png" />
+    <EmbeddedResource Include="Assets\images\car2x.png" />
+    <EmbeddedResource Include="Assets\images\car.png" />
+    <EmbeddedResource Include="Assets\images\cat2x.png" />
+    <EmbeddedResource Include="Assets\images\cat.png" />
+    <EmbeddedResource Include="Assets\images\chair2x.png" />
+    <EmbeddedResource Include="Assets\images\chair.png" />
+    <EmbeddedResource Include="Assets\images\clip2x.png" />
+    <EmbeddedResource Include="Assets\images\clip.png" />
+    <EmbeddedResource Include="Assets\images\clock2x.png" />
+    <EmbeddedResource Include="Assets\images\clock.png" />
+    <EmbeddedResource Include="Assets\images\cloud2x.png" />
+    <EmbeddedResource Include="Assets\images\cloud.png" />
+    <EmbeddedResource Include="Assets\images\computer2x.png" />
+    <EmbeddedResource Include="Assets\images\computer.png" />
+    <EmbeddedResource Include="Assets\images\envelope2x.png" />
+    <EmbeddedResource Include="Assets\images\envelope.png" />
+    <EmbeddedResource Include="Assets\images\eye2x.png" />
+    <EmbeddedResource Include="Assets\images\eye.png" />
+    <EmbeddedResource Include="Assets\images\flag2x.png" />
+    <EmbeddedResource Include="Assets\images\flag.png" />
+    <EmbeddedResource Include="Assets\images\folder2x.png" />
+    <EmbeddedResource Include="Assets\images\folder.png" />
+    <EmbeddedResource Include="Assets\images\foot2x.png" />
+    <EmbeddedResource Include="Assets\images\foot.png" />
+    <EmbeddedResource Include="Assets\images\graph2x.png" />
+    <EmbeddedResource Include="Assets\images\graph.png" />
+    <EmbeddedResource Include="Assets\images\house2x.png" />
+    <EmbeddedResource Include="Assets\images\house.png" />
+    <EmbeddedResource Include="Assets\images\key2x.png" />
+    <EmbeddedResource Include="Assets\images\key.png" />
+    <EmbeddedResource Include="Assets\images\leaf2x.png" />
+    <EmbeddedResource Include="Assets\images\leaf.png" />
+    <EmbeddedResource Include="Assets\images\light-bulb2x.png" />
+    <EmbeddedResource Include="Assets\images\light-bulb.png" />
+    <EmbeddedResource Include="Assets\images\lock2x.png" />
+    <EmbeddedResource Include="Assets\images\lock.png" />
+    <EmbeddedResource Include="Assets\images\magnifying-glass2x.png" />
+    <EmbeddedResource Include="Assets\images\magnifying-glass.png" />
+    <EmbeddedResource Include="Assets\images\man2x.png" />
+    <EmbeddedResource Include="Assets\images\man.png" />
+    <EmbeddedResource Include="Assets\images\music-note2x.png" />
+    <EmbeddedResource Include="Assets\images\music-note.png" />
+    <EmbeddedResource Include="Assets\images\pants2x.png" />
+    <EmbeddedResource Include="Assets\images\pants.png" />
+    <EmbeddedResource Include="Assets\images\pencil2x.png" />
+    <EmbeddedResource Include="Assets\images\pencil.png" />
+    <EmbeddedResource Include="Assets\images\printer2x.png" />
+    <EmbeddedResource Include="Assets\images\printer.png" />
+    <EmbeddedResource Include="Assets\images\robot2x.png" />
+    <EmbeddedResource Include="Assets\images\robot.png" />
+    <EmbeddedResource Include="Assets\images\scissors2x.png" />
+    <EmbeddedResource Include="Assets\images\scissors.png" />
+    <EmbeddedResource Include="Assets\images\sunglasses2x.png" />
+    <EmbeddedResource Include="Assets\images\sunglasses.png" />
+    <EmbeddedResource Include="Assets\images\t-shirt2x.png" />
+    <EmbeddedResource Include="Assets\images\t-shirt.png" />
+    <EmbeddedResource Include="Assets\images\tag2x.png" />
+    <EmbeddedResource Include="Assets\images\tag.png" />
+    <EmbeddedResource Include="Assets\images\tree2x.png" />
+    <EmbeddedResource Include="Assets\images\tree.png" />
+    <EmbeddedResource Include="Assets\images\truck2x.png" />
+    <EmbeddedResource Include="Assets\images\truck.png" />
+    <EmbeddedResource Include="Assets\images\umbrella2x.png" />
+    <EmbeddedResource Include="Assets\images\umbrella.png" />
+    <EmbeddedResource Include="Assets\images\woman2x.png" />
+    <EmbeddedResource Include="Assets\images\woman.png" />
+    <EmbeddedResource Include="Assets\images\world2x.png" />
+    <EmbeddedResource Include="Assets\images\world.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\audios\12times2.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\2times10.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\4plus1.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\4plus3.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\5plus1.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\5times2.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\6plus6.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\99plus1.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\add3to1.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\addblueandyellow.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\after2.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\capitaloffrance.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\divide4by2.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\firstletteralphabet.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\milkcolor.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\skycolor.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\skynight.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\sunastar.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\thirdmonth.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="assets\audios\yourobot.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Assets\audios\12times2.ogg" />
+    <EmbeddedResource Include="Assets\audios\2times10.ogg" />
+    <EmbeddedResource Include="Assets\audios\4plus1.ogg" />
+    <EmbeddedResource Include="Assets\audios\4plus3.ogg" />
+    <EmbeddedResource Include="Assets\audios\5plus1.ogg" />
+    <EmbeddedResource Include="Assets\audios\5times2.ogg" />
+    <EmbeddedResource Include="Assets\audios\6plus6.ogg" />
+    <EmbeddedResource Include="Assets\audios\99plus1.ogg" />
+    <EmbeddedResource Include="Assets\audios\add3to1.ogg" />
+    <EmbeddedResource Include="Assets\audios\addblueandyellow.ogg" />
+    <EmbeddedResource Include="Assets\audios\after2.ogg" />
+    <EmbeddedResource Include="Assets\audios\capitaloffrance.ogg" />
+    <EmbeddedResource Include="Assets\audios\divide4by2.ogg" />
+    <EmbeddedResource Include="Assets\audios\firstletteralphabet.ogg" />
+    <EmbeddedResource Include="Assets\audios\milkcolor.ogg" />
+    <EmbeddedResource Include="Assets\audios\skycolor.ogg" />
+    <EmbeddedResource Include="Assets\audios\skynight.ogg" />
+    <EmbeddedResource Include="Assets\audios\sunastar.ogg" />
+    <EmbeddedResource Include="Assets\audios\thirdmonth.ogg" />
+    <EmbeddedResource Include="Assets\audios\yourobot.ogg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
