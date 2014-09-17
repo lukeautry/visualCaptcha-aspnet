@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace VisualCaptcha.assets
+namespace VisualCaptcha
 {
     /// <summary>
     /// Static class containing image/audio option key/values
-    /// TODO: This probably needs to be hot-swappable, not hardcoded
     /// </summary>
-    public static class Assets
+    internal static class Assets
     {
-        public static readonly Dictionary<string, string> Images = new Dictionary<string, string>
+        internal static readonly Dictionary<string, string> Images = new Dictionary<string, string>
         {
             { "Airplane", "airplane.png" },
             { "Balloons", "balloons.png" },
@@ -49,7 +48,7 @@ namespace VisualCaptcha.assets
             { "World", "world.png" }
         };
 
-        public static readonly Dictionary<string, string> Audios = new Dictionary<string, string>
+        internal static readonly Dictionary<string, string> Audios = new Dictionary<string, string>
         {
             { "5times2.mp3", "10" },
             { "2times10.mp3", "20" },

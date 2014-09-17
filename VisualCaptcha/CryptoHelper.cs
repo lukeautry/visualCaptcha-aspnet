@@ -7,13 +7,13 @@ namespace VisualCaptcha
     /// <summary>
     /// Helper class to get random-ish values
     /// </summary>
-    public sealed class CryptoHelper
+    internal sealed class CryptoHelper
     {
         private static readonly char[] Characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
         private readonly RNGCryptoServiceProvider _crypto = new RNGCryptoServiceProvider();
         private readonly byte[] _buffer = new byte[4];
 
-        public string GetRandomString(int length)
+        internal string GetRandomString(int length)
         {
             var bytes = new byte[length];
             _crypto.GetNonZeroBytes(bytes);
@@ -27,7 +27,7 @@ namespace VisualCaptcha
             return sb.ToString();
         }
 
-        public int GetRandomIndex(int finishIndex)
+        internal int GetRandomIndex(int finishIndex)
         {
             if (finishIndex <= 0) { return 0; }
 
