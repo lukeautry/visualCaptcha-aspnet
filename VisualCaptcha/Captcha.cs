@@ -14,20 +14,16 @@ namespace VisualCaptcha
 
         private readonly CryptoHelper _crypto = new CryptoHelper();
         private readonly CaptchaSession _session;
-        private readonly string _baseDirectory;
+        private readonly string _baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory ?? "", "assets");
 
         #endregion
 
         #region Constructor
 
         /// <param name="session">New or existing Captcha session</param>
-        /// <param name="baseDirectoryPath">"Assets" folder path injection; default is AppDomain.CurrentDomain.RelativeSearchPath</param>
-        public Captcha(CaptchaSession session, string baseDirectoryPath = null) 
+        public Captcha(CaptchaSession session = null) 
         {
             _session = session ?? new CaptchaSession();
-
-             var defaultPath = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath ?? "", "assets");
-            _baseDirectory = string.IsNullOrEmpty(baseDirectoryPath) ? defaultPath : baseDirectoryPath;
         }
 
         #endregion
