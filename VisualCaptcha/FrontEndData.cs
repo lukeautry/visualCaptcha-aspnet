@@ -9,9 +9,14 @@ namespace VisualCaptcha
     [Serializable]
     public sealed class FrontEndData
     {
-        public List<string> Values { get; set; }
-        public string ImageName { get; set; }
-        public string ImageFieldName { get; set; }
-        public string AudioFieldName { get; set; }
+        public List<string> Values { get; internal set; }
+        public string ImageName { get; internal set; }
+        public string ImageFieldName { get; internal set; }
+        public string AudioFieldName { get; internal set; }
+
+        internal FrontEndData()
+        {
+            
+        }
     }
 }

@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
-    <Compile Include="CaptchaSession.cs" />
     <Compile Include="CryptoHelper.cs" />
     <Compile Include="FrontEndData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
