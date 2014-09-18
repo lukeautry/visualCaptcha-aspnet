@@ -7,7 +7,7 @@ namespace VisualCaptcha
     /// <summary>
     /// Helper class to get random-ish values
     /// </summary>
-    internal sealed class CryptoHelper
+    internal sealed class CryptoHelper : IDisposable
     {
         private static readonly char[] Characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
         private readonly RNGCryptoServiceProvider _crypto = new RNGCryptoServiceProvider();
@@ -45,6 +45,11 @@ namespace VisualCaptcha
                     return (Int32)(0 + (rng % diff));
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            _crypto.Dispose();
         }
     }
 }
