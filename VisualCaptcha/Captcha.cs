@@ -15,8 +15,6 @@ namespace VisualCaptcha
         public readonly KeyValuePair<string, string> ValidImageOption;
         public readonly KeyValuePair<string, string> ValidAudioOption;
 
-        private readonly CryptoHelper _crypto = new CryptoHelper();
-
         public Captcha(int numberOfImageOptions)
         {
             PossibleImageOptions = GetRandomImageOptions(numberOfImageOptions);
@@ -29,10 +27,11 @@ namespace VisualCaptcha
             var randomOptions = new Dictionary<string, string>();
             var availableOptions = new Dictionary<string, string>(Assets.Images);
 
+            var crypto = new CryptoHelper();
             for (var i = 0; i < numberOfOptions; i++)
             {
-                var randomItem = availableOptions.ToList()[_crypto.GetRandomIndex(availableOptions.Count)];
-                randomOptions.Add(randomItem.Key, _crypto.GetRandomString(20));
+                var randomItem = availableOptions.ToList()[crypto.GetRandomIndex(availableOptions.Count)];
+                randomOptions.Add(randomItem.Key, crypto.GetRandomString(20));
 
                 availableOptions.Remove(randomItem.Key); // We don't want duplicate entries
             }
@@ -40,9 +39,9 @@ namespace VisualCaptcha
             return randomOptions;
         }
 
-        private KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
+        private static KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
         {
-            return options.ToList()[_crypto.GetRandomIndex(options.Count)];
+            return options.ToList()[new CryptoHelper().GetRandomIndex(options.Count)];
         }
 
         /// <summary>
@@ -50,12 +49,13 @@ namespace VisualCaptcha
         /// </summary>
         public FrontEndData GetFrontEndData()
         {
+            var crypto = new CryptoHelper();
             return new FrontEndData
             {
                 Values = PossibleImageOptions.Select(option => option.Value).ToList(),
                 ImageName = ValidImageOption.Key,
-                ImageFieldName = _crypto.GetRandomString(20),
-                AudioFieldName = _crypto.GetRandomString(20)
+                ImageFieldName = crypto.GetRandomString(20),
+                AudioFieldName = crypto.GetRandomString(20)
             };
         }
 
