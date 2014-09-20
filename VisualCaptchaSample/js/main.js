@@ -81,14 +81,10 @@ var Main = (function () {
     };
 
     Main.prototype.showVisualCaptchaFilled = function () {
-        if (this.captcha.getCaptchaData().valid) {
-            window.alert('visualCaptcha is filled!');
-        } else {
-            window.alert('visualCaptcha is NOT filled!');
-        }
+        window.alert(this.captcha.getCaptchaData().valid ? "VisualCaptcha is filled." : "Visual Captcha is not filled.");
     };
     return Main;
 })();
 
-var vm = new Main();
+new Main();
 //# sourceMappingURL=main.js.map

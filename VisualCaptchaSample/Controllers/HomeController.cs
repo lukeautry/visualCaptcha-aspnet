@@ -17,14 +17,14 @@ namespace VisualCaptchaSample.Controllers
             var captcha = new Captcha(numberOfImages);
             Session[SessionKey] = captcha;
 
-            var clientSideDataObject = captcha.GetFrontEndData();
+            var frontEndData = captcha.GetFrontEndData();
 
             // Client side library requires lowercase property names
             return Json(new {
-                values = clientSideDataObject.Values,
-                imageName = clientSideDataObject.ImageName,
-                imageFieldName = clientSideDataObject.ImageFieldName,
-                audioFieldName = clientSideDataObject.AudioFieldName
+                values = frontEndData.Values,
+                imageName = frontEndData.ImageName,
+                imageFieldName = frontEndData.ImageFieldName,
+                audioFieldName = frontEndData.AudioFieldName
             }, JsonRequestBehavior.AllowGet);
         }
 
@@ -48,9 +48,10 @@ namespace VisualCaptchaSample.Controllers
         public JsonResult Try(string value)
         {
             var captcha = (Captcha)Session[SessionKey];
-            var result = captcha.ValidateAnswer(value);
+            var success = captcha.ValidateAnswer(value);
+            var message = "Your answer was " + (success ? "valid." : "invalid.");
 
-            return Json(new { success = result.Item1, message = result.Item2 });
+            return Json(new { success, message });
         }
     }
 }

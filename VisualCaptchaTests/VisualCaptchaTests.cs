@@ -17,7 +17,7 @@ namespace VisualCaptchaTests
                 var data = captcha.GetFrontEndData();
 
                 Assert.IsTrue(
-                    captcha.ValidateAnswer(data.Values.FirstOrDefault(v => v == captcha.ValidImageOption.Value)).Item1);
+                    captcha.ValidateAnswer(data.Values.FirstOrDefault(v => v == captcha.ValidImageOption.Value)));
             }
         }
 
@@ -31,7 +31,7 @@ namespace VisualCaptchaTests
 
                 foreach (var option in data.Values.Where(option => option != captcha.ValidImageOption.Value))
                 {
-                    Assert.IsFalse(captcha.ValidateAnswer(option).Item1);
+                    Assert.IsFalse(captcha.ValidateAnswer(option));
                 }
             }
         }

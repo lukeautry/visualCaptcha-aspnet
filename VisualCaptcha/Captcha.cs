@@ -17,32 +17,15 @@ namespace VisualCaptcha
 
         private readonly CryptoHelper _crypto = new CryptoHelper();
 
+        /// <summary>
+        /// Instantiate a Captcha session with an assortment of possible image selections
+        /// and an audio option for accessibility
+        /// </summary>
         public Captcha(int numberOfImageOptions)
         {
             PossibleImageOptions = GetRandomImageOptions(numberOfImageOptions);
             ValidImageOption = GetRandomOption(PossibleImageOptions);
             ValidAudioOption = GetRandomOption(Assets.Audios);
-        }
-
-        private Dictionary<string, string> GetRandomImageOptions(int numberOfOptions)
-        {
-            var randomOptions = new Dictionary<string, string>();
-            var availableOptions = new Dictionary<string, string>(Assets.Images);
-
-            for (var i = 0; i < numberOfOptions; i++)
-            {
-                var randomItem = availableOptions.ToList()[_crypto.GetRandomIndex(availableOptions.Count)];
-                randomOptions.Add(randomItem.Key, _crypto.GetRandomString(20));
-
-                availableOptions.Remove(randomItem.Key); // We don't want duplicate entries
-            }
-
-            return randomOptions;
-        }
-
-        private KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
-        {
-            return options.ToList()[_crypto.GetRandomIndex(options.Count)];
         }
 
         /// <summary>
@@ -87,34 +70,41 @@ namespace VisualCaptcha
         }
 
         /// <summary>
-        /// Returns success (boolean) and message response (string)
+        /// Answer value is valid for either image or audio option
         /// </summary>
         /// <param name="answerValue">This could be the hashed value of the image path or the answer to an audio question</param>
-        public Tuple<bool, string> ValidateAnswer(string answerValue)
+        public bool ValidateAnswer(string answerValue)
         {
-            bool success;
-            string message;
-
-            if (PossibleImageOptions.Any(i => i.Value == answerValue))
-            {
-                success = ValidateImage(answerValue);
-                message = success ? "Image selected was valid." : "Image selection was invalid.";
-            }
-            else // Provided value doesn't exist in Images collection, check against Audios
-            {
-                success = ValidateAudio(answerValue);
-                message = success ? "Accessibility answer was valid." : "Invalid answer, please try again.";
-            }
-
-            return new Tuple<bool, string>(success, message);
+            return IsValidImage(answerValue) || IsValidAudio(answerValue);
         }
 
-        private bool ValidateImage(string hashedPath)
+        private Dictionary<string, string> GetRandomImageOptions(int numberOfOptions)
+        {
+            var randomOptions = new Dictionary<string, string>();
+            var availableOptions = Assets.Images.ToList();
+
+            for (var i = 0; i < numberOfOptions; i++)
+            {
+                var randomItem = availableOptions[_crypto.GetRandomIndex(availableOptions.Count)];
+                randomOptions.Add(randomItem.Key, _crypto.GetRandomString(20));
+
+                availableOptions.Remove(randomItem); // We don't want duplicate entries
+            }
+
+            return randomOptions;
+        }
+
+        private KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
+        {
+            return options.ToList()[_crypto.GetRandomIndex(options.Count)];
+        }
+
+        private bool IsValidImage(string hashedPath)
         {
             return ValidImageOption.Value == hashedPath;
         }
 
-        private bool ValidateAudio(string value)
+        private bool IsValidAudio(string value)
         {
             return ValidAudioOption.Value.Equals(value, StringComparison.OrdinalIgnoreCase);
         }

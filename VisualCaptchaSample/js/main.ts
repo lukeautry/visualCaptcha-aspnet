@@ -85,13 +85,11 @@ class Main {
 		this.$statusMessage.show();
 	}
 
-	private showVisualCaptchaFilled() : void {
-		if (this.captcha.getCaptchaData().valid) {
-			window.alert('visualCaptcha is filled!');
-		} else {
-			window.alert('visualCaptcha is NOT filled!');
-		}
+	private showVisualCaptchaFilled(): void {
+		window.alert(this.captcha.getCaptchaData().valid
+			? "VisualCaptcha is filled."
+			: "Visual Captcha is not filled.");
 	}
 }
 
-var vm = new Main();
+new Main();
