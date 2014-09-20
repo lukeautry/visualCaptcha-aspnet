@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="312efda2-71a9-41c5-9e7a-706a0808fc57" Title="VisualCaptcha" Url="html/3ff49724-7c1c-e6bf-a25a-c5d34a5bd440.htm">
+    <HelpTOCNode Id="84a353e2-9e2e-4b04-910d-12f6c9f4a79a" Title="Captcha Class" Url="html/3e43e086-4b55-99d1-2462-ef3f4b2e0bce.htm">
+      <HelpTOCNode Title="Captcha Constructor " Url="html/9511f993-c5f8-a251-494a-f07d8a7ff940.htm" />
+      <HelpTOCNode Id="88905f07-cc61-4f0c-ab2e-eb09140a6a9a" Title="Captcha Fields" Url="html/acf62afa-7a15-37ac-3de7-3ceddb9a1f1d.htm">
+        <HelpTOCNode Title="PossibleImageOptions Field" Url="html/ef16cd71-c902-49ac-9882-66cea5ce6abf.htm" />
+        <HelpTOCNode Title="ValidAudioOption Field" Url="html/5dddb578-134a-40e2-3eaa-edeb112fe0b7.htm" />
+        <HelpTOCNode Title="ValidImageOption Field" Url="html/af134760-71a1-3af3-8906-3d3eb0dd8c97.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2a046856-cc32-4b7a-9cf4-d7b08693891f" Title="Captcha Methods" Url="html/f18de941-5907-ba3a-704b-e2ec3ea04870.htm">
+        <HelpTOCNode Title="GetAudio Method " Url="html/facfaa4b-f660-e8f7-e2d2-ba9ec21c4934.htm" />
+        <HelpTOCNode Title="GetFrontEndData Method " Url="html/8219b30d-1a9b-6fe2-772e-0b045f1f01b3.htm" />
+        <HelpTOCNode Title="GetImage Method " Url="html/19e5976a-90e9-4e72-b13c-05451c0224fd.htm" />
+        <HelpTOCNode Title="ValidateAnswer Method " Url="html/d5035782-9d01-b948-597f-3defb52d6ed4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="50af220a-080a-4187-8cc4-fa0c51958bd4" Title="FrontEndData Class" Url="html/26cb76f4-3f64-b48b-839a-a0ed1d5c419b.htm">
+      <HelpTOCNode Id="676739b0-c510-4ac3-955b-6fcd94cad162" Title="FrontEndData Properties" Url="html/ede909db-90c6-1256-eae6-39277d750368.htm">
+        <HelpTOCNode Title="AudioFieldName Property " Url="html/a693fe72-d240-f1a1-fa61-d941817be8b1.htm" />
+        <HelpTOCNode Title="ImageFieldName Property " Url="html/ad00d9fc-bbd5-5f28-38ed-b550f15815c2.htm" />
+        <HelpTOCNode Title="ImageName Property " Url="html/f6044a7a-1213-6b94-2f9b-9af367ec5cfe.htm" />
+        <HelpTOCNode Title="Values Property " Url="html/de74950f-fd08-2623-2cef-8a49091f7600.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
