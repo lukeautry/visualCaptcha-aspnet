@@ -15,8 +15,6 @@ namespace VisualCaptcha
         public readonly KeyValuePair<string, string> ValidImageOption;
         public readonly KeyValuePair<string, string> ValidAudioOption;
 
-        private readonly CryptoHelper _crypto = new CryptoHelper();
-
         /// <summary>
         /// Instantiate a Captcha session with an assortment of possible image selections
         /// and an audio option for accessibility
@@ -33,12 +31,13 @@ namespace VisualCaptcha
         /// </summary>
         public FrontEndData GetFrontEndData()
         {
+            var crypto = new CryptoHelper();
             return new FrontEndData
             {
                 Values = PossibleImageOptions.Select(option => option.Value).ToList(),
                 ImageName = ValidImageOption.Key,
-                ImageFieldName = _crypto.GetRandomString(20),
-                AudioFieldName = _crypto.GetRandomString(20)
+                ImageFieldName = crypto.GetRandomString(20),
+                AudioFieldName = crypto.GetRandomString(20)
             };
         }
 
@@ -83,10 +82,11 @@ namespace VisualCaptcha
             var randomOptions = new Dictionary<string, string>();
             var availableOptions = Assets.Images.ToList();
 
+            var crypto = new CryptoHelper();
             for (var i = 0; i < numberOfOptions; i++)
             {
-                var randomItem = availableOptions[_crypto.GetRandomIndex(availableOptions.Count)];
-                randomOptions.Add(randomItem.Key, _crypto.GetRandomString(20));
+                var randomItem = availableOptions[crypto.GetRandomIndex(availableOptions.Count)];
+                randomOptions.Add(randomItem.Key, crypto.GetRandomString(20));
 
                 availableOptions.Remove(randomItem); // We don't want duplicate entries
             }
@@ -94,9 +94,9 @@ namespace VisualCaptcha
             return randomOptions;
         }
 
-        private KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
+        private static KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)
         {
-            return options.ToList()[_crypto.GetRandomIndex(options.Count)];
+            return options.ToList()[new CryptoHelper().GetRandomIndex(options.Count)];
         }
 
         private bool IsValidImage(string hashedPath)
