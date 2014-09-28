@@ -1,5 +1,11 @@
-Home repo: https://github.com/lukeautry/visualCaptcha-aspnet 
+VisualCaptcha for ASP.NET
+=========================
 
-This is a ASP.NET MVC implementation of emotionLoop's visualCaptcha. It is most likely missing some features from the more mature backend implementations available here: https://github.com/emotionLoop/visualCaptcha
+Home repository: https://github.com/lukeautry/visualCaptcha-aspnet 
 
-Ported by Luke Autry (lukeautry@gmail.com).
+This is a ASP.NET MVC implementation of emotionLoop's visualCaptcha. Other implementations are available at the following URL: https://github.com/emotionLoop/visualCaptcha
+
+Documentation
+=============
+
+Check out the full documentation here: http://lukeautry.github.io/visualCaptcha-aspnet
