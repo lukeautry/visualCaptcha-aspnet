@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Reflection;
 
@@ -11,8 +12,21 @@ namespace VisualCaptcha
     [Serializable]
     public sealed class Captcha
     {
-        public readonly Dictionary<string, string> PossibleImageOptions;
+        /// <summary>
+        /// Dictionary of possible images to be displayed client-side
+        /// Key: The image name (e.g. "Cloud")
+        /// Value: The hashed value of the image path (e.g. "Cloud.png" --> "198723lkdjlfiwoekjdlsd")
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> PossibleImageOptions;
+
+        /// <summary>
+        /// The correct selection out of the options contained in PossibleImageOptions
+        /// </summary>
         public readonly KeyValuePair<string, string> ValidImageOption;
+
+        /// <summary>
+        /// The correct question/answer pair for audio accessibility option
+        /// </summary>
         public readonly KeyValuePair<string, string> ValidAudioOption;
 
         /// <summary>
@@ -27,7 +41,7 @@ namespace VisualCaptcha
         }
 
         /// <summary>
-        /// Retrieve data transfer object containing information needed by client-side library
+        /// Retrieve object containing information needed by client-side library
         /// </summary>
         public FrontEndData GetFrontEndData()
         {
@@ -77,9 +91,9 @@ namespace VisualCaptcha
             return IsValidImage(answerValue) || IsValidAudio(answerValue);
         }
 
-        private Dictionary<string, string> GetRandomImageOptions(int numberOfOptions)
+        private static ImmutableDictionary<string, string> GetRandomImageOptions(int numberOfOptions)
         {
-            var randomOptions = new Dictionary<string, string>();
+            var randomOptions = ImmutableDictionary.CreateBuilder<string, string>();
             var availableOptions = Assets.Images.ToList();
 
             var crypto = new CryptoHelper();
@@ -91,7 +105,7 @@ namespace VisualCaptcha
                 availableOptions.Remove(randomItem); // We don't want duplicate entries
             }
 
-            return randomOptions;
+            return randomOptions.ToImmutable();
         }
 
         private static KeyValuePair<string, string> GetRandomOption(ICollection<KeyValuePair<string, string>> options)

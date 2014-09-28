@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace VisualCaptcha
 {
@@ -7,7 +8,7 @@ namespace VisualCaptcha
     /// </summary>
     internal static class Assets
     {
-        internal static readonly Dictionary<string, string> Images = new Dictionary<string, string>
+        internal static readonly ImmutableDictionary<string, string> Images = new Dictionary<string, string>
         {
             { "Airplane", "airplane.png" },
             { "Balloons", "balloons.png" },
@@ -46,9 +47,9 @@ namespace VisualCaptcha
             { "Umbrella", "umbrella.png" },
             { "Woman", "woman.png" },
             { "World", "world.png" }
-        };
+        }.ToImmutableDictionary();
 
-        internal static readonly Dictionary<string, string> Audios = new Dictionary<string, string>
+        internal static readonly ImmutableDictionary<string, string> Audios = new Dictionary<string, string>
         {
             { "5times2.mp3", "10" },
             { "2times10.mp3", "20" },
@@ -70,6 +71,6 @@ namespace VisualCaptcha
             { "skynight.mp3", "black" },
             { "thirdmonth.mp3", "march" },
             { "firstletteralphabet.mp3", "a" }
-        };
+        }.ToImmutableDictionary();
     }
 }
